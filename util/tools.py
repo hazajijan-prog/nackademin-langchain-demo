@@ -37,9 +37,21 @@ def get_current_time() -> str:
     now = datetime.now(timezone.utc)
     return f"Current UTC time: {now.strftime('%Y-%m-%d %H:%M:%S UTC')}"
 
-def get_web_search_tool(): 
+def get_web_search_tool():
     toolkit = RequestsToolkit(
-        requests_wrapper=TextRequestsWrapper(headers={}),
+        requests_wrapper=TextRequestsWrapper(
+            headers={"User-Agent": "LangChainAgent/1.0"},
+            verify=False
+        ),
         allow_dangerous_requests=True,
     )
     return toolkit.get_tools()
+
+@tool
+def read_file(path: str) -> str:
+    """Read a file from the local computer and return its contents."""
+    try:
+        with open(path, "r", encoding="utf-8", errors="ignore") as f:
+            return f.read()
+    except Exception as e:
+        return f"Error reading file: {e}"
