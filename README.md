@@ -29,5 +29,5 @@ Make sure the virtual environment is activated and run from the project root:
 
 ```bash
 source .venv/bin/activate
-python -m examples.agent-lecture.simple_agent
+python3 main.py
 ```
