@@ -1,0 +1,2 @@
+AI-agenter är system som kan fatta beslut och utföra uppgifter autonomt.
+De används i chatbots, spel och automatiserade system.

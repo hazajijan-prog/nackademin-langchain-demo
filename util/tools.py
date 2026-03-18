@@ -2,7 +2,7 @@ import math
 from datetime import datetime, timezone
 from langchain_community.agent_toolkits.openapi.toolkit import RequestsToolkit
 from langchain_community.utilities.requests import TextRequestsWrapper
-from langchain.tools import tool
+from langchain_core.tools import tool
 
 
 @tool
