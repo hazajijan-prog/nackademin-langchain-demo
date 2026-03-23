@@ -20,5 +20,10 @@ Make sure the virtual environment is activated and run from the project root:
 
 ```bash
 source .venv/bin/activate
+
+# Calculator server
 python -m calculator_mcp.calculator_mcp
+
+# Planner server
+python -m planner_mcp.planner_mcp
 ```

@@ -27,6 +27,43 @@ def divide_numbers(
     """Divides two numbers together and returns the result."""
     return a / b
 
+@mcp.tool()
+def subtract_numbers(
+    a: Annotated[float, Field(description="Frist number (number to subtract from)")],
+    b: Annotated[float, Field(description="Second number (number to subtract)")],
+) -> float:
+    """Subtracts the second number from the first and returns the result."""
+    return a - b
+
+@mcp.tool()
+def multiply_numbers(
+    a: Annotated[float, Field(description="Frist number (number to multiply)")],
+    b: Annotated[float, Field(description="Second number (number to multiply)")],
+) -> float: 
+    """Multiplies two numbers together and returns the result."""
+    return a * b 
+
+@mcp.tool()
+def power_numbers(
+    a: Annotated[float, Field(description="Base number")],
+    b: Annotated[float, Field(description= "Exponent (power to rise tha base)")],
+) -> float:
+    """Raises the first number to the power of tha second and returns the result"""
+    return a ** b
+
+@mcp.tool()
+def sqrt_number(
+    x: Annotated[float, Field(description="Number to calculate the square root of")],
+) -> float | str:
+    """Calculates the square root of a number and returns the result."""
+    
+    if x < 0:
+        return "Cannot calculate square root of a negative number"
+
+    return x ** 0.5
+
+
+
 
 if __name__ == "__main__":
     import asyncio
